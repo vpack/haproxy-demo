@@ -7,6 +7,8 @@ init:
 build:
 	docker build -t awesome .
 
+ls:
+	docker stack ps ${NAME}
 clean:
 	docker stack rm ${NAME}
 
