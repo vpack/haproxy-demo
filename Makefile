@@ -6,8 +6,10 @@ init:
 
 build:
 	docker build -t awesome .
+logs:
+	docker logs $$(docker ps -q -f name=hademo_proxy)
 
-ls:
+ps:
 	docker stack ps ${NAME}
 clean:
 	docker stack rm ${NAME}
