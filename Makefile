@@ -11,6 +11,8 @@ h:
 	docker run -d -v $$PWD/haproxy.cfg://usr/local/etc/haproxy/haproxy.cfg -p 80:80 --net mynet --name hap haproxy
 	sleep 1
 	docker logs hap
+ps:
+	docker ps -a 
 j:
 	docker run -d -v $$PWD/Makefile:/Makefile --net mynet --name jumpbox  alpine:3.10 tail -f /dev/null
 
