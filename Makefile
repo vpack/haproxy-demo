@@ -8,7 +8,8 @@ n3:
 	docker run -d --net mynet --name red nginx 
 h:
 	docker rm -f hap || echo done
-	docker run -d -v $$PWD/haproxy.cfg://usr/local/etc/haproxy/haproxy.cfg -p 80:80 -p 81:81 --net mynet --name hap haproxy
+	#docker run -d -v $$PWD/haproxy_http.cfg://usr/local/etc/haproxy/haproxy.cfg -p 80:80 -p 81:81 --net mynet --name hap haproxy
+	docker run -d -v $$PWD/haproxy_tcp.cfg://usr/local/etc/haproxy/haproxy.cfg -p 80:80 -p 81:81 --net mynet --name hap haproxy
 	sleep 1
 	docker logs hap
 ps:
